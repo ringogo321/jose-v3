@@ -27,14 +27,14 @@
         <h1>See it in action</h1>
         <p class="subhead">Tell us who you are and what role you want to calibrate.</p>
 
-        <form id="intake-form" class="form" action="calibration.html" method="get">
+        <form id="intake-form" class="form" action="calibration.html" method="get" novalidate>
           <label>
             Full name
-            <input type="text" name="fullName" placeholder="Avery Chen" required />
+            <input type="text" name="fullName" placeholder="Avery Chen" />
           </label>
           <label>
             Email
-            <input type="email" name="email" placeholder="avery@company.com" required />
+            <input type="email" name="email" placeholder="avery@company.com" />
           </label>
           <label>
             LinkedIn profile
@@ -42,7 +42,7 @@
           </label>
           <label>
             Role you are applying for
-            <input type="text" name="role" placeholder="Recruiting Ops Lead" required />
+            <input type="text" name="role" placeholder="Recruiting Ops Lead" />
           </label>
 
           <button class="cta" type="submit">Continue to calibration</button>
