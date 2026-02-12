@@ -79,11 +79,26 @@ const readFormValues = (form) => {
   return Object.fromEntries(data.entries());
 };
 
+const storeData = (key, value) => {
+  const payload = JSON.stringify(value);
+  localStorage.setItem(key, payload);
+  sessionStorage.setItem(key, payload);
+};
+
+const readStoredData = (key) => {
+  return JSON.parse(localStorage.getItem(key) || sessionStorage.getItem(key) || '{}');
+};
+
+const readUrlParams = () => {
+  const params = new URLSearchParams(window.location.search);
+  return Object.fromEntries(params.entries());
+};
+
 if (intakeForm) {
   intakeForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const values = readFormValues(intakeForm);
-    localStorage.setItem('scout-intake', JSON.stringify(values));
+    storeData('scout-intake', values);
     window.location.href = 'calibration.html';
   });
 }
@@ -92,15 +107,24 @@ if (calibrationForm) {
   calibrationForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const values = readFormValues(calibrationForm);
-    localStorage.setItem('scout-calibration', JSON.stringify(values));
+    storeData('scout-calibration', values);
     window.location.href = 'score.html';
   });
+}
+
+if (window.location.pathname.endsWith('calibration.html')) {
+  const params = readUrlParams();
+  if (Object.keys(params).length) {
+    storeData('scout-intake', params);
+  }
 }
 
 if (restartButton) {
   restartButton.addEventListener('click', () => {
     localStorage.removeItem('scout-intake');
     localStorage.removeItem('scout-calibration');
+    sessionStorage.removeItem('scout-intake');
+    sessionStorage.removeItem('scout-calibration');
     window.location.href = 'intake.html';
   });
 }
@@ -108,8 +132,8 @@ if (restartButton) {
 const scorePage = document.getElementById('final-score');
 
 if (scorePage) {
-  const intake = JSON.parse(localStorage.getItem('scout-intake') || '{}');
-  const calibration = JSON.parse(localStorage.getItem('scout-calibration') || '{}');
+  const intake = readStoredData('scout-intake');
+  const calibration = readStoredData('scout-calibration');
 
   const focusMap = {
     quality: 'Quality of hire',
@@ -131,8 +155,8 @@ if (scorePage) {
     domain: 'Domain depth',
   };
 
-  const nameValue = (intake.fullName || '').trim().toLowerCase();
-  const isBen = nameValue.startsWith('ben') || nameValue.includes(' ben') || nameValue === 'ben';
+  const nameValue = (intake.fullName || '').trim();
+  const isBen = /\bben\b/i.test(nameValue);
   const scoreValue = isBen ? 23 : 100;
 
   scorePage.textContent = scoreValue;
