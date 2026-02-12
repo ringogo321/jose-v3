@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Recruiting Engine</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg">
+      <div class="noise"></div>
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+    </div>
+
+    <header class="nav">
+      <div class="brand">Scout AI</div>
+      <nav>
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#impact">Impact</a>
+        <a href="#demo">Assessments</a>
+      </nav>
+      <button class="cta">Request Demo</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Recruiting infrastructure</p>
+          <h1>From funnel chaos to calibrated, equitable hiring.</h1>
+          <p class="subhead">
+            An AI screening agent now, evolving into an AI-native ATS that scales talent discovery without scaling headcount.
+          </p>
+          <div class="hero-actions">
+            <button class="cta">See It In Action</button>
+            <button class="ghost">Download Brief</button>
+          </div>
+          <div class="hero-metrics">
+            <div>
+              <div class="metric" data-count="62">0</div>
+              <span>hrs saved per req</span>
+            </div>
+            <div>
+              <div class="metric" data-count="35">0</div>
+              <span>% fewer false negatives</span>
+            </div>
+            <div>
+              <div class="metric" data-count="4">0</div>
+              <span>weeks faster to hire</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="card-title">Live Screening Snapshot</div>
+          <div class="screen">
+            <div class="screen-row">
+              <span>Role criteria</span>
+              <span class="pill">Calibrated</span>
+            </div>
+            <div class="screen-row">
+              <span>Interview type</span>
+              <span class="pill">Structured</span>
+            </div>
+            <div class="score">
+              <div>
+                <div class="score-label">Composite Score</div>
+                <div class="score-value">87</div>
+              </div>
+              <div class="score-bars">
+                <div><span>Craft</span><b style="width: 86%"></b></div>
+                <div><span>Impact</span><b style="width: 78%"></b></div>
+                <div><span>Risk</span><b style="width: 18%"></b></div>
+              </div>
+            </div>
+          </div>
+          <button class="ghost wide">View Full Summary</button>
+        </div>
+      </section>
+
+      <section id="problem" class="section">
+        <h2>Structural recruiting problems</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Overwhelming volume</h3>
+            <p>Inbound applications are reviewed shallowly or skipped altogether.</p>
+          </div>
+          <div class="card">
+            <h3>Missed high-potential talent</h3>
+            <p>Strong candidates slip through due to human capacity constraints.</p>
+          </div>
+          <div class="card">
+            <h3>Limited sourcing leverage</h3>
+            <p>Recruiters can’t scale proactive outreach without quality tradeoffs.</p>
+          </div>
+          <div class="card">
+            <h3>Bias in early screening</h3>
+            <p>Manual review introduces inconsistency and unintended bias.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="solution" class="section">
+        <div class="section-head">
+          <h2>Two-phase solution</h2>
+          <div class="tabs" role="tablist">
+            <button class="tab active" data-tab="phase1">Phase 1: AI Screening Agent</button>
+            <button class="tab" data-tab="phase2">Phase 2: AI-Native ATS</button>
+          </div>
+        </div>
+        <div class="tab-panels">
+          <div class="panel active" id="phase1">
+            <ul>
+              <li>ATS-integrated agent that reviews every applicant against calibrated criteria.</li>
+              <li>Live, structured AI-led screening interviews for high-signal data.</li>
+              <li>Standardized summaries, risk flags, and scoring outputs.</li>
+              <li>Bias-mitigated and consistent evaluation signals.</li>
+            </ul>
+          </div>
+          <div class="panel" id="phase2">
+            <ul>
+              <li>End-to-end automation from sourcing to scheduling.</li>
+              <li>Continuous learning from hiring outcomes.</li>
+              <li>Built-in analytics for bias, diversity, and quality of hire.</li>
+              <li>Recruiter copilots that proactively surface talent pools.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="impact" class="section">
+        <h2>10x impact on recruiting velocity</h2>
+        <div class="impact">
+          <div class="impact-item">
+            <span class="label">Time-to-review</span>
+            <div class="bar"><i style="width: 88%"></i></div>
+            <span class="value">-65%</span>
+          </div>
+          <div class="impact-item">
+            <span class="label">Time-to-hire</span>
+            <div class="bar"><i style="width: 72%"></i></div>
+            <span class="value">-40%</span>
+          </div>
+          <div class="impact-item">
+            <span class="label">Quality-of-hire</span>
+            <div class="bar"><i style="width: 80%"></i></div>
+            <span class="value">+30%</span>
+          </div>
+          <div class="impact-item">
+            <span class="label">Sourcing capacity</span>
+            <div class="bar"><i style="width: 90%"></i></div>
+            <span class="value">3.2x</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="demo" class="section demo">
+        <div>
+          <h2>Make good assessments, fast</h2>
+          <p>
+            Adjust strictness to see how the agent balances signal strength, risk flags, and fairness guardrails.
+          </p>
+          <div class="slider">
+            <label for="strictness">Screening strictness</label>
+            <input id="strictness" type="range" min="1" max="5" value="3" />
+            <div class="slider-meta">
+              <span>Exploratory</span>
+              <span id="strictness-label">Balanced</span>
+              <span>Elite</span>
+            </div>
+          </div>
+        </div>
+        <div class="demo-card">
+          <div class="card-title">Candidate Summary</div>
+          <div class="summary">
+            <div>
+              <span class="pill" id="risk-pill">Low risk</span>
+              <h3>Priya S.</h3>
+              <p>8 years in systems, led migration to event-driven architecture, 2 promotions.</p>
+            </div>
+            <div class="summary-score">
+              <div id="score">82</div>
+              <span>Composite</span>
+            </div>
+          </div>
+          <div class="signals">
+            <div><b>Signal Strength</b><span id="signal">High</span></div>
+            <div><b>Bias Guardrails</b><span>Enabled</span></div>
+            <div><b>Reviewer Load</b><span id="load">Moderate</span></div>
+          </div>
+          <button class="cta wide">Queue for Human Review</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Frequently asked</h2>
+        <div class="accordion">
+          <button class="accordion-item">
+            <span>How is bias mitigated in early screening?</span>
+            <span class="caret">+</span>
+          </button>
+          <div class="accordion-panel">
+            Structured criteria, blind review signals, and calibrated scoring reduce inconsistent judgment.
+          </div>
+          <button class="accordion-item">
+            <span>What gets integrated into the ATS?</span>
+            <span class="caret">+</span>
+          </button>
+          <div class="accordion-panel">
+            Application review, screening interviews, and standardized summaries sync directly to existing workflows.
+          </div>
+          <button class="accordion-item">
+            <span>How do recruiters stay in control?</span>
+            <span class="caret">+</span>
+          </button>
+          <div class="accordion-panel">
+            Recruiters set calibration thresholds and always make final hiring decisions.
+          </div>
+        </div>
+      </section>
+
+      <section class="section final-cta">
+        <h2>Build a recruiting engine that scales with growth</h2>
+        <p>Transform screening from a bottleneck into a signal-rich growth lever.</p>
+        <button class="cta">Book a Working Session</button>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Scout AI · Built for scale</span>
+      <span>Phase 1 → Phase 2 roadmap</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
