@@ -133,7 +133,7 @@ if (scorePage) {
 
   const nameValue = (intake.fullName || '').trim().toLowerCase();
   const isBen = nameValue.startsWith('ben') || nameValue.includes(' ben') || nameValue === 'ben';
-  const scoreValue = isBen ? 88 : 100;
+  const scoreValue = isBen ? 23 : 100;
 
   scorePage.textContent = scoreValue;
 
