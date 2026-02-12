@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relevance Score</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="form-page">
+    <div class="bg">
+      <div class="noise"></div>
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+    </div>
+
+    <header class="nav">
+      <div class="brand">Scout AI</div>
+      <nav>
+        <a href="index.html#solution">Solution</a>
+        <a href="index.html#impact">Impact</a>
+      </nav>
+      <a class="ghost" href="index.html">Home</a>
+    </header>
+
+    <main class="form-wrap">
+      <section class="section form-card score-card">
+        <h1>Your relevance score</h1>
+        <p class="subhead" id="score-subhead">Based on your intake and recruiter calibration inputs.</p>
+
+        <div class="score-display">
+          <div class="score-circle" id="final-score">--</div>
+          <div class="score-details">
+            <div><b>Name</b><span id="summary-name">—</span></div>
+            <div><b>Role</b><span id="summary-role">—</span></div>
+            <div><b>Calibration focus</b><span id="summary-focus">—</span></div>
+          </div>
+        </div>
+
+        <div class="signals">
+          <div><b>Signal Strength</b><span id="summary-signal">—</span></div>
+          <div><b>Risk Posture</b><span id="summary-risk">—</span></div>
+          <div><b>Evidence Priority</b><span id="summary-evidence">—</span></div>
+        </div>
+
+        <button class="cta" id="restart">Start new assessment</button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

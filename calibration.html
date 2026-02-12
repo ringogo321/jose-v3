@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recruiter Calibration</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="form-page">
+    <div class="bg">
+      <div class="noise"></div>
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+    </div>
+
+    <header class="nav">
+      <div class="brand">Scout AI</div>
+      <nav>
+        <a href="index.html#solution">Solution</a>
+        <a href="index.html#impact">Impact</a>
+      </nav>
+      <a class="ghost" href="intake.html">Back</a>
+    </header>
+
+    <main class="form-wrap">
+      <section class="section form-card">
+        <h1>Recruiter calibration</h1>
+        <p class="subhead">Answer three questions to tune the assessment lens.</p>
+
+        <form id="calibration-form" class="form">
+          <label>
+            What hiring outcomes do you optimize for most?
+            <select name="outcome" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="quality">Quality of hire</option>
+              <option value="speed">Time-to-hire</option>
+              <option value="diversity">Diversity & fairness</option>
+              <option value="scale">High-volume throughput</option>
+            </select>
+          </label>
+          <label>
+            How do you balance signal vs. risk in early screens?
+            <select name="risk" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="aggressive">Aggressive: lean into potential</option>
+              <option value="balanced">Balanced: proof plus potential</option>
+              <option value="conservative">Conservative: proven track record</option>
+            </select>
+          </label>
+          <label>
+            What evidence matters most for this role?
+            <select name="evidence" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="impact">Measurable impact</option>
+              <option value="craft">Role-specific craft</option>
+              <option value="leadership">Leadership & influence</option>
+              <option value="domain">Domain depth</option>
+            </select>
+          </label>
+
+          <button class="cta" type="submit">Get relevance score</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

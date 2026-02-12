@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Screening Intake</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="form-page">
+    <div class="bg">
+      <div class="noise"></div>
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+    </div>
+
+    <header class="nav">
+      <div class="brand">Scout AI</div>
+      <nav>
+        <a href="index.html#solution">Solution</a>
+        <a href="index.html#impact">Impact</a>
+      </nav>
+      <a class="ghost" href="index.html">Back</a>
+    </header>
+
+    <main class="form-wrap">
+      <section class="section form-card">
+        <h1>See it in action</h1>
+        <p class="subhead">Tell us who you are and what role you want to calibrate.</p>
+
+        <form id="intake-form" class="form">
+          <label>
+            Full name
+            <input type="text" name="fullName" placeholder="Avery Chen" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="avery@company.com" required />
+          </label>
+          <label>
+            LinkedIn profile
+            <input type="url" name="linkedin" placeholder="https://www.linkedin.com/in/yourname" required />
+          </label>
+          <label>
+            Role you are applying for
+            <input type="text" name="role" placeholder="Recruiting Ops Lead" required />
+          </label>
+
+          <button class="cta" type="submit">Continue to calibration</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
