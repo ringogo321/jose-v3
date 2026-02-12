@@ -47,13 +47,68 @@
       </section>
     </main>
 
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=5"></script>
     <script>
       window.addEventListener('DOMContentLoaded', () => {
-        const nameEl = document.getElementById('summary-name');
+        const readStored = (key) => {
+          try {
+            return JSON.parse(localStorage.getItem(key) || sessionStorage.getItem(key) || '{}');
+          } catch (e) {
+            return {};
+          }
+        };
+
+        const intake = readStored('scout-intake');
+        const calibration = readStored('scout-calibration');
+        const nameText = (intake.fullName || '').trim();
+        const isBen = /\bben\b/i.test(nameText);
+        const scoreValue = isBen ? 23 : 100;
+
         const scoreEl = document.getElementById('final-score');
-        if (nameEl && scoreEl && /\bben\b/i.test(nameEl.textContent.trim())) {
-          scoreEl.textContent = '23';
+        if (scoreEl) scoreEl.textContent = String(scoreValue);
+
+        const summaryName = document.getElementById('summary-name');
+        const summaryRole = document.getElementById('summary-role');
+        const summaryFocus = document.getElementById('summary-focus');
+        const summarySignal = document.getElementById('summary-signal');
+        const summaryRisk = document.getElementById('summary-risk');
+        const summaryEvidence = document.getElementById('summary-evidence');
+
+        if (summaryName) summaryName.textContent = intake.fullName || 'Unknown';
+        if (summaryRole) summaryRole.textContent = intake.role || 'Not specified';
+
+        const focusMap = {
+          quality: 'Quality of hire',
+          speed: 'Time-to-hire',
+          diversity: 'Diversity & fairness',
+          scale: 'High-volume throughput',
+        };
+
+        const riskMap = {
+          aggressive: 'Aggressive',
+          balanced: 'Balanced',
+          conservative: 'Conservative',
+        };
+
+        const evidenceMap = {
+          impact: 'Measurable impact',
+          craft: 'Role-specific craft',
+          leadership: 'Leadership & influence',
+          domain: 'Domain depth',
+        };
+
+        if (summaryFocus) summaryFocus.textContent = focusMap[calibration.outcome] || 'Not set';
+        if (summarySignal) summarySignal.textContent = calibration.outcome === 'quality' ? 'Very high' : 'High';
+        if (summaryRisk) summaryRisk.textContent = riskMap[calibration.risk] || 'Balanced';
+        if (summaryEvidence) summaryEvidence.textContent = evidenceMap[calibration.evidence] || 'Not set';
+
+        const bookButton = document.getElementById('book-button');
+        if (bookButton) {
+          if (scoreValue > 95) {
+            bookButton.style.display = 'inline-flex';
+          } else {
+            bookButton.style.display = 'none';
+          }
         }
       });
     </script>
